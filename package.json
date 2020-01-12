@@ -1,0 +1,44 @@
+{
+  "name": "jest-passed-all-assert",
+  "version": "0.0.1",
+  "author": "Kemakorn S",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "types/index.d.ts"
+  ],
+  "scripts": {
+    "build": "babel src -d dist --ignore *.test.js",
+    "lint": "eslint src",
+    "lint:fix": "yarn lint -- --fix",
+    "prepublishOnly": "yarn build",
+    "precommit": "lint-staged",
+    "prettier": "prettier 'src/**/*.js' --write --single-quote=true --print-width=120"
+  },
+  "keywords": [
+    "jest",
+    "matchers",
+    "extend",
+    "extended",
+    "test",
+    "testing",
+    "assertions"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.8.0",
+    "@babel/core": "^7.8.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jest": "^23.4.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "prettier": "^1.19.1",
+    "pretty-format": "^24.9.0"
+  }
+}
