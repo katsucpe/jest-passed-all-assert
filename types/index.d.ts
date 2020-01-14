@@ -5,17 +5,29 @@ declare namespace jest {
   interface Matchers<R> {
     /**
      * Use `.toPassedAllAssert` when checking if an `Array` of function and return passed results.
-     * @param {Array.<*>} callbacks
+     * ```
+     * let testCollection = [
+     *    () => expect(response.status).toEqual(HttpStatus.OK),
+     *    () => expect(response.data.id).toEqual(id.toString())
+     *  ]
+     * expect(testCollection).toPassedAllAssert()
+     * ```
      */
-    toPassedAllAssert(callbacks: any[]): R;
+    toPassedAllAssert(): R;
   }
 
   // noinspection JSUnusedGlobalSymbols
   interface Expect {
      /**
      * Use `.toPassedAllAssert` when checking if an `Array` of function and return passed results.
-     * @param {Array.<*>} callbacks
+     * ```
+     * let testCollection = [
+     *    () => expect(response.status).toEqual(HttpStatus.OK),
+     *    () => expect(response.data.id).toEqual(id.toString())
+     *  ]
+     * expect(testCollection).toPassedAllAssert()
+     * ```
      */
-    toPassedAllAssert(callbacks: any[]): any;
+    toPassedAllAssert(): any;
   }
 }
